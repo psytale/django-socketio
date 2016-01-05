@@ -80,6 +80,6 @@ on_disconnect   = Event()       # request, socket, context
 on_finish       = Event()       # request, socket, context
 
 # Give each event a name attribute.
-for k, v in globals().items():
+for k, v in list(globals().items()):
     if isinstance(v, Event):
         setattr(v, "name", k)
